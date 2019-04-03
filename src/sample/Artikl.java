@@ -53,5 +53,16 @@ public class Artikl {
         Artikl a = (Artikl) o;
         if (this == o) return true;
         if (naziv.equals(a.getNaziv())) return false;
+        return super.equals(o);
+    }
+
+    public static ArrayList<Artikl>
+    izbaciDuplikate(ArrayList<Artikl> artikli){
+        for (int i=0; i<artikli.size(); i++){
+            for (int j=i+1; j<artikli.size(); j++){
+                if (artikli.get(i).equals(artikli.get(j))) artikli.remove(j);
+            }
+        }
+        return artikli;
     }
 }
