@@ -7,17 +7,19 @@ public class Artikl {
     private String naziv;
     private Double cijena;
 
-    public Artikl (){
+    public Artikl() {
 
     }
-    public String getSifra(){
+
+    public String getSifra() {
         return sifra;
     }
 
     public void setSifra(String sifra) {
         this.sifra = sifra;
     }
-    public String getNaziv (){
+
+    public String getNaziv() {
         return naziv;
     }
 
@@ -25,7 +27,7 @@ public class Artikl {
         this.naziv = naziv;
     }
 
-    public double getCijena(){
+    public double getCijena() {
         return cijena;
     }
 
@@ -38,16 +40,19 @@ public class Artikl {
         return "Artikl {" + sifra + ',' + naziv + ',' + cijena + '}';
     }
 
-    public Artikl (String podatak){
-        String [] artikl = podatak.split(",")
-        sifra=artikl[0];
-        naziv=artikl[1];
-        cijena=double.parseDouble(artikl[2])
+    public Artikl(String podatak) {
+        String[] artikl = podatak.split(",");
+        sifra = artikl[0];
+        naziv = artikl[1];
+        cijena = double.parseDouble(artikl[2]);
     }
 
     @Override
     public boolean equals(Object o) {
-       Artikl artikl = Artikl (o);
-       
+        Artikl artikl = (Artikl) o;
+        Artikl a = (Artikl) o;
+        if (this == o) return true;
+        if (naziv.equals(a.getNaziv()))
+            return false;
     }
 }
