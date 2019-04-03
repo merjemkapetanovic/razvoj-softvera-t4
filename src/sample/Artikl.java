@@ -33,4 +33,21 @@ public class Artikl {
         this.cijena = cijena;
     }
 
+    @Override
+    public String toString() {
+        return "Artikl {" + sifra + ',' + naziv + ',' + cijena + '}';
+    }
+
+    public Artikl (String podatak){
+        String [] artikl = podatak.split(",")
+        sifra=artikl[0];
+        naziv=artikl[1];
+        cijena=double.parseDouble(artikl[2])
+    }
+
+    @Override
+    public boolean equals(Object o) {
+       Artikl artikl = Artikl (o);
+       
+    }
 }
