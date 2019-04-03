@@ -44,7 +44,7 @@ public class Artikl {
         String[] artikl = podatak.split(",");
         sifra = artikl[0];
         naziv = artikl[1];
-        cijena = double.parseDouble(artikl[2]);
+        cijena = Double.parseDouble(artikl[2]);
     }
 
     @Override
@@ -52,7 +52,6 @@ public class Artikl {
         Artikl artikl = (Artikl) o;
         Artikl a = (Artikl) o;
         if (this == o) return true;
-        if (naziv.equals(a.getNaziv()))
-            return false;
+        if (naziv.equals(a.getNaziv())) return false;
     }
 }
